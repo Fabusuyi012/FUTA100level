@@ -1,9 +1,9 @@
-'To sort a given set of text alphabetically
+'To sort a set of given text alphabetically
 Sub sortABC()
     Dim x, y, i As Long
     Dim tempTxt1 As String
-    Dim tempTxt2 As String
-    myArray = Array("Myname", "Yourname", "Ournames", "FUTA", "Lastname") 'array that contains the words to be sorted and whose contents can be modified
+    numWord = InputBox("Enter words seperated by a comma and no space e.g Name1,Name2,Name5 ")
+    myArray = Split(numWord, ",")
     For x = LBound(myArray) To UBound(myArray)
         For y = x To UBound(myArray)
             If UCase(myArray(y)) < UCase(myArray(x)) Then
@@ -14,8 +14,6 @@ Sub sortABC()
             End If
         Next y
     Next x
-    For i = LBound(myArray) To UBound(myArray)
-        MsgBox (myArray(i))
-    Next i
+        MsgBox Join(myArray, vbCrLf)
 End Sub
 
